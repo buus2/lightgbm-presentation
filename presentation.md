@@ -206,10 +206,12 @@ When data is bigger than memory size, set `two_round=True`. Otherwise leave it a
 - Be aware a task manager or any similar CPU monitoring tool might report cores not being fully utilized. This is normal.
 
 For LightGBM, the default value of `tree_learner` is `serial`. There are also three parallel scenarios prepared:
+
 | | #data is small | #data is large |
 | --- | --- | --- |
 | **#feature is small** | `feature` | `data` |
 | **#feature is large** | `feature` | `voting` |
+
 For parallel learning, you should not use full CPU cores since this will cause poor performance for the network.
 See also: http://lightgbm.readthedocs.io/en/latest/Parallel-Learning-Guide.html
 
